@@ -7,8 +7,4 @@
          <display-name>todo-rest</display-name>
          <description>test app for todo restful</description>
          
-         <context-param>
-         	<param-name>contextroot</param-name>
-         	<param-value>todo-rest</param-value>
-         </context-param>
 </web-app>
