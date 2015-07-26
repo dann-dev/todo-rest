@@ -13,10 +13,11 @@ import main.webapp.error.ExistingListException;
 import main.webapp.error.NoMatchingListException;
 import main.webapp.manager.Manager;
 
-@Path("/list/{listId}")
+@Path("/list")
 public class ListService {
 
 	@GET
+	@Path("/{listId}")
 	public ItemList listServiceGet(@PathParam("listId") String listId) throws NoMatchingListException {
 		return Manager.getList(listId);
 	}
