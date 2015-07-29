@@ -23,6 +23,7 @@ public class ListService {
 	}
 	
 	@POST
+	@PathParam("/addlist")
 	public String listServicePost(@FormParam("id") String id, @FormParam("name") String name) throws ExistingListException {
 		if( null != id && null != name) {
 			ItemList list1 = new ItemList(id,name);

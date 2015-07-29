@@ -2,14 +2,14 @@ package main.webapp.domain;
 
 public class Item {
 
-	private int id;
+	private String id;
 	private String name;
 	private String desc;
 	
 	public Item() {
 	}
 	
-	public Item(int id, String name, String desc) {
+	public Item(String id, String name, String desc) {
 		this.id = id;
 		this.name = name;
 		this.desc = desc;
@@ -19,20 +19,22 @@ public class Item {
 	public boolean equals(Object obj) {
 		if (obj==null) {
 			return false;
+		} else if (this.id == null) {
+			return false;
 		} else if (obj instanceof Item) {
 			Item i = (Item) obj;
 			
-			if (this.id==i.getId()) {
+			if (this.id.equals(i.getId())) {
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {

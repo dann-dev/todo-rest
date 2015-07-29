@@ -2,6 +2,8 @@ package main.webapp.domain;
 
 import java.util.ArrayList;
 
+import main.webapp.error.NoMatchingItemException;
+
 public class ItemList {
 	
 	private String id;
@@ -25,8 +27,13 @@ public class ItemList {
 		items.add(i);
 	}
 	
-	public Item getItem(int i) {
-		return items.get(i);
+	public Item getItem(String id) throws NoMatchingItemException {
+		for(Item item: items) {
+			if (item.getId().equals(id)) {
+				return item;
+			}
+		}
+		throw new NoMatchingItemException("No matching item in list with id: " + id);
 	}
 	
 	public void removeItem(Item i) {

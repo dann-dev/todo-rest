@@ -3,8 +3,10 @@ package main.webapp.manager;
 import java.util.HashMap;
 import java.util.Map;
 
+import main.webapp.domain.Item;
 import main.webapp.domain.ItemList;
 import main.webapp.error.ExistingListException;
+import main.webapp.error.NoMatchingItemException;
 import main.webapp.error.NoMatchingListException;
 
 public class Manager {
@@ -41,6 +43,14 @@ public class Manager {
 		} else {
 			throw new NoMatchingListException("No list matching key");
 		}
+	}
+	
+	public static Item getItem(String listId, String itemId) throws NoMatchingItemException, NoMatchingListException {
+		return getList(listId).getItem(itemId);
+	}
+	
+	public static void addItemToList(Item item, String listId) throws NoMatchingListException {
+		getList(listId).addItem(item);
 	}
 	
 }
