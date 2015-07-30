@@ -6,9 +6,9 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
-import main.webapp.domain.Item;
-import main.webapp.error.NoMatchingItemException;
-import main.webapp.error.NoMatchingListException;
+import main.java.domain.Item;
+import main.java.error.NoMatchingItemException;
+import main.java.error.NoMatchingListException;
 import main.webapp.manager.Manager;
 
 @Path("item")

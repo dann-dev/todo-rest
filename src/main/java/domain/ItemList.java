@@ -1,8 +1,8 @@
-package main.webapp.domain;
+package main.java.domain;
 
 import java.util.ArrayList;
 
-import main.webapp.error.NoMatchingItemException;
+import main.java.error.NoMatchingItemException;
 
 public class ItemList {
 	

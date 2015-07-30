@@ -1,4 +1,4 @@
-package main.webapp.error;
+package main.java.error;
 
 public class NoMatchingListException extends Exception {
 

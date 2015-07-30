@@ -1,4 +1,4 @@
-package main.webapp.domain;
+package main.java.domain;
 
 public class Item {
 

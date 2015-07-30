@@ -3,11 +3,11 @@ package main.webapp.manager;
 import java.util.HashMap;
 import java.util.Map;
 
-import main.webapp.domain.Item;
-import main.webapp.domain.ItemList;
-import main.webapp.error.ExistingListException;
-import main.webapp.error.NoMatchingItemException;
-import main.webapp.error.NoMatchingListException;
+import main.java.domain.Item;
+import main.java.domain.ItemList;
+import main.java.error.ExistingListException;
+import main.java.error.NoMatchingItemException;
+import main.java.error.NoMatchingListException;
 
 public class Manager {
 

@@ -8,9 +8,9 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
-import main.webapp.domain.ItemList;
-import main.webapp.error.ExistingListException;
-import main.webapp.error.NoMatchingListException;
+import main.java.domain.ItemList;
+import main.java.error.ExistingListException;
+import main.java.error.NoMatchingListException;
 import main.webapp.manager.Manager;
 
 @Path("/list")
