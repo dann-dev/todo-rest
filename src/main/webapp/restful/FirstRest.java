@@ -7,16 +7,13 @@ import javax.ws.rs.Produces;
 @Path("/test")
 public class FirstRest {
 	
-	
 	public FirstRest() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	@GET
 	@Produces("text/plain")
-	public String getClichedMessage() {
-	    // Return some cliched textual content
-	    return "Hello World";
+	public String test() {
+	    return "Test";
 	}
 
 }
