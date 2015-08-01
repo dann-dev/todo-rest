@@ -1,4 +1,4 @@
-package main.webapp.restful;
+package main.java.restful;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -9,7 +9,7 @@ import javax.ws.rs.PathParam;
 import main.java.domain.Item;
 import main.java.error.NoMatchingItemException;
 import main.java.error.NoMatchingListException;
-import main.webapp.manager.Manager;
+import main.java.manager.Manager;
 
 @Path("item")
 public class ItemService {

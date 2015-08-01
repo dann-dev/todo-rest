@@ -1,4 +1,4 @@
-package main.webapp.restful;
+package main.java.restful;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

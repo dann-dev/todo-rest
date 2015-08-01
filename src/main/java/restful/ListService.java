@@ -1,4 +1,4 @@
-package main.webapp.restful;
+package main.java.restful;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
@@ -11,7 +11,7 @@ import javax.ws.rs.PathParam;
 import main.java.domain.ItemList;
 import main.java.error.ExistingListException;
 import main.java.error.NoMatchingListException;
-import main.webapp.manager.Manager;
+import main.java.manager.Manager;
 
 @Path("/list")
 public class ListService {

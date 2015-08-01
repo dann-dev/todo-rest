@@ -1,4 +1,4 @@
-package main.webapp.manager;
+package main.java.manager;
 
 import java.util.HashMap;
 import java.util.Map;

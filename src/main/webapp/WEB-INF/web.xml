@@ -7,4 +7,8 @@
          <display-name>todo-rest</display-name>
          <description>test app for todo restful</description>
          
+         <welcome-file-list>
+         	<welcome-file>test/testposts.html</welcome-file>
+         </welcome-file-list>
+         
 </web-app>
