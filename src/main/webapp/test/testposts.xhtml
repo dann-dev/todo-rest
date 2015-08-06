@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"    
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+	<h:head>
+	</h:head>
+	<h:body>
+		<h:form action="http://localhost:8080/restapp/rest/list" method="post">
+			<h2>add list</h2>
+			<label for="id">id:</label>
+				<input type="text" name="id" /> <br />
+			<label for="name">name:</label>
+				<input type="text" name="name" /> <br />
+			<input type="submit" value="Submit"/>
+		</h:form>
+		<h:form action="http://localhost:8080/restapp/rest/item" method="post">
+			<h2>add item</h2>
+			<label for="id">id:</label>
+				<input type="text" name="id" /> <br />
+			<label for="name">name:</label>
+				<input type="text" name="name" /> <br />
+			<label for="dec">desc:</label>
+				<input type="text" name="desc" /> <br />
+			<label for="listid">listid:</label>
+				<input type="text" name="listid" /> <br />
+			<input type="submit" value="Submit"/>
+		</h:form>
+		
+		<br />
+		<h:outputText value="test1" />
+		<h:outputText value="#{testPostsFaces.test}" />
+		
+	</h:body>
+</html>

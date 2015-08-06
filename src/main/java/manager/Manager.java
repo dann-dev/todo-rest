@@ -12,7 +12,7 @@ import main.java.error.NoMatchingListException;
 public class Manager {
 
 	private static Map<String, ItemList> itemLists = new HashMap<String, ItemList>();
-	
+
 	public static void addList(String key, ItemList list) throws ExistingListException {
 		if (itemLists.containsKey(key)) {
 			throw new ExistingListException("List already exists");
@@ -20,7 +20,7 @@ public class Manager {
 			itemLists.put(key, list);
 		}
 	}
-	
+
 	public static ItemList getList(String key) throws NoMatchingListException {
 		if (itemLists.containsKey(key)) {
 			return itemLists.get(key);
@@ -28,7 +28,7 @@ public class Manager {
 			throw new NoMatchingListException("No list matching key");
 		}
 	}
-	
+
 	public static void updateList(String key, ItemList list) throws NoMatchingListException {
 		if (itemLists.containsKey(key)) {
 			itemLists.put(key, list);
@@ -36,7 +36,7 @@ public class Manager {
 			throw new NoMatchingListException("No list matching key");
 		}
 	}
-	
+
 	public static void deleteList(String key) throws NoMatchingListException {
 		if (itemLists.containsKey(key)) {
 			itemLists.remove(key);
@@ -44,13 +44,17 @@ public class Manager {
 			throw new NoMatchingListException("No list matching key");
 		}
 	}
-	
+
 	public static Item getItem(String listId, String itemId) throws NoMatchingItemException, NoMatchingListException {
 		return getList(listId).getItem(itemId);
 	}
-	
+
 	public static void addItemToList(Item item, String listId) throws NoMatchingListException {
 		getList(listId).addItem(item);
 	}
-	
+
+	public static String test() {
+		System.out.println("manager test called");
+		return "test success";
+	}
 }
