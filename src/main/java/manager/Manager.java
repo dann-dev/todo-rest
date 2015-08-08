@@ -1,6 +1,8 @@
 package main.java.manager;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import main.java.domain.Item;
@@ -17,6 +19,7 @@ public class Manager {
 		if (itemLists.containsKey(key)) {
 			throw new ExistingListException("List already exists");
 		} else {
+			System.out.println("Adding list with id: " + key);
 			itemLists.put(key, list);
 		}
 	}
@@ -55,6 +58,14 @@ public class Manager {
 
 	public static String test() {
 		System.out.println("manager test called");
-		return "test success";
+		return "test success\n";
+	}
+
+	public static List<ItemList> getAllLists() {
+		System.out.println("getAllLists");
+		ArrayList<ItemList> lists = new ArrayList<ItemList>();
+		lists.addAll(itemLists.values());
+		System.out.println("map size: " + itemLists.size() + " list size: " + lists.size());
+		return lists;
 	}
 }

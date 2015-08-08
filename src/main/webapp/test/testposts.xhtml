@@ -6,16 +6,18 @@
 	<h:head>
 	</h:head>
 	<h:body>
-		<h:form action="http://localhost:8080/restapp/rest/list" method="post">
-			<h2>add list</h2>
+	
+		<form  action="http://localhost:8080/restapp/rest/list" method="post">
+			<h2>add list (http://localhost:8080/restapp/rest/list)</h2>
 			<label for="id">id:</label>
 				<input type="text" name="id" /> <br />
 			<label for="name">name:</label>
 				<input type="text" name="name" /> <br />
 			<input type="submit" value="Submit"/>
-		</h:form>
-		<h:form action="http://localhost:8080/restapp/rest/item" method="post">
-			<h2>add item</h2>
+		</form>
+		
+		<form action="http://localhost:8080/restapp/rest/item" method="post">
+			<h2>add item (http://localhost:8080/restapp/rest/item)</h2>
 			<label for="id">id:</label>
 				<input type="text" name="id" /> <br />
 			<label for="name">name:</label>
@@ -25,11 +27,46 @@
 			<label for="listid">listid:</label>
 				<input type="text" name="listid" /> <br />
 			<input type="submit" value="Submit"/>
-		</h:form>
+		</form>
 		
 		<br />
-		<h:outputText value="test1" />
-		<h:outputText value="#{testPostsFaces.test}" />
+		
+		<h:dataTable value="#{facesManagedBean.lists}" var="list" >
+			<h:column >
+				<f:facet name="header">
+					list id
+				</f:facet>
+				<h:outputText value="#{list.id}" />
+			</h:column>
+			<h:column >
+				<f:facet name="header">
+					list name
+				</f:facet>
+				<h:outputText value="#{list.name}" />
+			</h:column>
+			<h:column>
+				<h:dataTable value="#{list.items}" var="item">
+					<h:column>
+						<f:facet name="header">
+							item id
+						</f:facet>
+						<h:outputText value="#{item.id}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							item name
+						</f:facet>
+						<h:outputText value="#{item.name}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							item desc
+						</f:facet>
+						<h:outputText value="#{item.desc}" />
+					</h:column>
+				</h:dataTable>
+			</h:column>
+		</h:dataTable>
 		
 	</h:body>
 </html>
