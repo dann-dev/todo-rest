@@ -48,6 +48,15 @@ public class Manager {
 		}
 	}
 
+	public static void deleteItem(String listId, String itemId)
+			throws NoMatchingItemException, NoMatchingListException {
+		if (itemLists.containsKey(listId)) {
+			itemLists.get(listId).removeItem(itemId);
+		} else {
+			throw new NoMatchingListException("No list matching key");
+		}
+	}
+
 	public static Item getItem(String listId, String itemId) throws NoMatchingItemException, NoMatchingListException {
 		return getList(listId).getItem(itemId);
 	}

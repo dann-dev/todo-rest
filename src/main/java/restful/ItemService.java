@@ -42,7 +42,8 @@ public class ItemService {
 	}
 
 	@DELETE
-	public String itemServiceDelete() {
+	@PathParam("/{listId}/{itemId}")
+	public String itemServiceDelete(@PathParam("listId") String listId, @PathParam("itemId") String itemId) {
 		return "delete request received on list services";
 	}
 }

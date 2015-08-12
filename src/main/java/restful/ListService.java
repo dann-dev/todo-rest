@@ -31,7 +31,6 @@ public class ListService {
 	@Produces()
 	public Response listServicePost(@FormParam("id") String id, @FormParam("name") String name)
 			throws ExistingListException, URISyntaxException {
-		System.out.println("called listServicePost");
 		if ((null != id) && (null != name)) {
 			ItemList list1 = new ItemList(id, name);
 			Manager.addList(list1.getId(), list1);
@@ -45,7 +44,10 @@ public class ListService {
 	}
 
 	@DELETE
-	public String listServiceDelete() {
-		return "delete request received on list services";
+	@Path("/{listId}")
+	public Response listServiceDelete(@PathParam("listId") String listId)
+			throws NoMatchingListException, URISyntaxException {
+		Manager.deleteList(listId);
+		return Response.temporaryRedirect(new URI("http://localhost:8080/restapp/test/testposts.xhtml")).build();
 	}
 }

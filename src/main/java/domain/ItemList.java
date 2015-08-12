@@ -5,39 +5,43 @@ import java.util.ArrayList;
 import main.java.error.NoMatchingItemException;
 
 public class ItemList {
-	
+
 	private String id;
 	private String name;
-	
+
 	private ArrayList<Item> items = new ArrayList<Item>();
-	
+
 	public ItemList() {
 	}
-	
+
 	public ItemList(String id, String name) {
 		this.id = id;
 		this.name = name;
 	}
-	
+
 	public ArrayList<Item> getItems() {
 		return items;
 	}
-	
+
 	public void addItem(Item i) {
 		items.add(i);
 	}
-	
+
 	public Item getItem(String id) throws NoMatchingItemException {
-		for(Item item: items) {
+		for (Item item : items) {
 			if (item.getId().equals(id)) {
 				return item;
 			}
 		}
 		throw new NoMatchingItemException("No matching item in list with id: " + id);
 	}
-	
+
 	public void removeItem(Item i) {
 		items.remove(i);
+	}
+
+	public void removeItem(String itemId) throws NoMatchingItemException {
+		this.removeItem(this.getItem(itemId));
 	}
 
 	public String getId() {
